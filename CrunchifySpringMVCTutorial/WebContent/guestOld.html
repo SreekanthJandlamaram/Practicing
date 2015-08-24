@@ -1,0 +1,58 @@
+<style>
+	.error{
+		font-size: 0.9;
+		color: red;
+		margin: 0 0 0 150px;
+		padding: 0;
+	}
+</style>
+
+<hr>
+<h2>Make a Reservation</h2>
+
+<form name="GuestForm" novalidate>
+
+	<div>
+	    <label>Name</label>    
+		<input type="text" name="Name" data-ng-model="newGuest.Name" required>		
+		<div data-ng-show="GuestForm.Name.$dirty">
+			<p class="error" data-ng-show="GuestForm.Name.$error.required">UserName is required</p>
+		</div>			
+    </div>
+    
+    <div>
+	    <label>Date</label>
+   		<input type="date" name="Date" required data-ng-model="newGuest.Date">
+   		<div data-ng-show="GuestForm.Date.$dirty">
+			<p class="error" data-ng-show="required">Date is required</p>
+		</div>
+    </div>
+    
+    <div>
+	    <label>Time</label>	
+		<input type="time" name="Time" required data-ng-model="newGuest.Time">
+		<div data-ng-show="GuestForm.Time.$dirty">
+			<p class="error" data-ng-show="required">Time is required</p>
+		</div>
+    </div>
+    
+    <div>
+	    <label>Phone</label>
+		<input type="text" name="Number" required data-ng-model="newGuest.Number">
+		<div data-ng-show="GuestForm.Number.$dirty">
+			<p class="error" data-ng-show="required">Mobile is required</p>
+			<p class="error" data-ng-show="pattern">Incorrect Number</p>
+		</div>
+    </div>
+    
+    <div>
+	    <label>Party Size</label>
+		<input type="text" name="Size" data-ng-model="newGuest.Size">
+    </div>
+    
+    <div>
+    <button type="submit" data-ng-click="gCtrl.sendForm(newGuest)">Reserve</button>
+    </div>		    
+</form>
+
+<!-- http://jonsamwell.com/dynamic-angularjs-validation/ -->
