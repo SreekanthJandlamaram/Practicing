@@ -1,0 +1,22 @@
+@CHARSET "ISO-8859-1";
+
+#getTable {	
+	border: 2px solid black;
+}
+
+.red{
+	background-color : red;
+	color : red;
+}
+
+.blue{
+	background-color : blue;
+}
+
+.faTrash {
+	cursor : pointer;
+}
+
+th {
+	cursor : pointer;
+}

@@ -1,0 +1,83 @@
+<style>
+	.error{
+		font-size: 0.9;
+		color: red;
+		margin: 0 0 0 150px;
+		padding: 0;
+	}
+</style>
+
+
+<h2>Make a Reservation</h2>
+<form name="GuestForm" novalidate>
+
+	<div>
+	    <label>Name</label>    
+		<input type="text" name="Name" required data-ng-model="gCtrl.newGuest.Name">
+		<div data-ng-messages="GuestForm.Name.$error" data-ng-if="GuestForm.Name.$dirty">
+			<p class="error" data-ng-message="required">UserName is required</p>
+		</div>
+    </div>
+    
+    <div>
+	    <label>Date</label>
+   		<input type="date" name="Date" required data-ng-model="gCtrl.newGuest.Date">
+   		<div data-ng-messages="GuestForm.Date.$error" data-ng-if="GuestForm.Date.$dirty">
+			<p class="error" data-ng-message="required">Date is required</p>
+		</div>
+    </div>
+    
+    <div>
+	    <label>Time</label>	
+		<input type="time" name="Time" required data-ng-model="gCtrl.newGuest.Time">
+		<div data-ng-messages="GuestForm.Time.$error" data-ng-if="GuestForm.Time.$dirty">
+			<p class="error" data-ng-message="required">Time is required</p>
+		</div>
+    </div>
+    
+    <div>
+	    <label>Phone</label>
+		<input type="text" name="Number" required data-ng-model="gCtrl.newGuest.Number">
+		<div data-ng-messages="GuestForm.Number.$error" data-ng-if="GuestForm.Number.$dirty">
+			<p class="error" data-ng-message="required">Mobile is required</p>
+		</div>
+    </div>
+    
+    <div>
+	    <label>Party Size</label>
+		<input type="text" name="Size" data-ng-model="gCtrl.newGuest.Size">
+    </div>
+    
+    <div>
+    <button type="submit" data-ng-click="gCtrl.createNewGuest()">Reserve</button>
+    </div>		    
+</form>
+
+
+
+<!-- <form name="GuestForm" novalidate>
+
+	<h2>Make a Reservation</h2>
+
+    <label>Name</label>    
+	<input type="text" name="Name" value="FirstName" data-ng-model="gCtrl.newGuest.Name">
+    
+    <br>
+    <label>Time</label>	
+	<input type="time" name="Time" data-ng-model="gCtrl.newGuest.Time">
+    
+    <br>
+    <label>Date</label>
+   	<input type="date" name="Date" data-ng-model="gCtrl.newGuest.Date">
+    
+	<br>
+	<label>Phone</label>
+	<input type="tel" name="Number" data-ng-model="gCtrl.newGuest.Number">
+	
+	<br>
+	<label>Party Size</label>
+	<input type="text" name="Size" data-ng-model="gCtrl.newGuest.Size">
+
+    <br>
+    <button type="submit" data-ng-click="gCtrl.createNewGuest()">Reserve</button>		    
+</form> -->

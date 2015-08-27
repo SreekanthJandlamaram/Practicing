@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+<head>
+<meta charset="utf-8" />
+<title>AngularJS Plunker</title>
+<script>
+	document.write('<base href="' + document.location + '" />');
+</script>
+<script data-require="angular.js@1.4.x"
+	src="https://code.angularjs.org/1.4.3/angular.js" data-semver="1.4.3"></script>
+<script src="injection.js"></script>
+<link rel="stylesheet" type="text/css" href="app.css">
+</head>
+
+<body>
+	<div ng-controller="GreetingCtrl as gc">
+		<form>
+			<div>
+				<input type="text" placeholder="FirstName" ng-model="gc.newStudent.firstname">
+				<input type="text" placeholder="Phone" ng-model="gc.newStudent.phone">
+			</div>
+			<div>
+				<input type="text" placeholder="City" ng-model="gc.newStudent.city">
+				<input type="text" placeholder="College" ng-model="gc.newStudent.college">
+			</div>
+			<div>
+				<button ng-click="gc.addPerson()">Add Person</button>
+			</div>			
+		</form>
+		
+		<hr>
+			<input type="text" placeholder="Search in the table" ng-model="gc.searchTable">
+		<hr>
+		
+		<table id="getTable">
+			<thead>
+				<th>Firstname</th>
+				<th>Phone</th>
+				<th>City</th>
+				<th>College</th>
+				<th>Id</th>
+				<th>Action</th>
+			</thead>
+			<tbody>
+
+				<!--Repeating a array to represent in a table. Use track by $index to add same values multiple times without errors-->
+				<tr ng-repeat="person in gc.people | filter:gc.searchTable  track by $index">
+					<td>{{person.firstname}}</td>
+					<td>{{person.phone}}</td>
+					<td>{{person.city}}</td>
+					<td>{{person.college}}</td>
+					<td>{{person.id}}</td>
+					<td><button ng-click="gc.deleteButton($index)">delete</button></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div>
+			<hr>
+			<button ng-click=gc.clickButton()>Click Me</button>
+		</div>
+	</div>
+
+</body>

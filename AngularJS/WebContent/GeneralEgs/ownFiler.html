@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html data-ng-app="plunker">
+
+<head>
+<meta charset="utf-8" />
+<title>AngularJS Plunker</title>
+<script>
+	document.write('<base href="' + document.location + '" />');
+</script>
+<script data-require="angular.js@1.4.x"
+	src="https://code.angularjs.org/1.4.3/angular.js" data-semver="1.4.3"></script>
+<script src="angular.js"></script>
+<link rel="stylesheet" type="text/css" href="app.css">
+</head>
+
+<body>
+	<div data-ng-controller="GreetingCtrl as gc">
+		<form>
+			<div>
+				<input type="text" placeholder="FirstName" data-ng-model="gc.newStudent.firstname">
+				<input type="text" placeholder="Phone" data-ng-model="gc.newStudent.phone">
+			</div>
+			<div>
+				<input type="text" placeholder="City" data-ng-model="gc.newStudent.city">
+				<input type="text" placeholder="College" data-ng-model="gc.newStudent.college">
+			</div>
+			<div>
+				<button data-ng-click="gc.addPerson()">Add Person</button>
+			</div>			
+		</form>
+		
+		<hr>
+			<input type="text" placeholder="Search in the table" data-ng-model="gc.searchTable">
+		<hr>
+		
+		<table id="getTable">
+			<thead>
+				<tr>
+					<th>Firstname</th>
+					<th>Phone</th>
+					<th>City</th>
+					<th>College</th>
+					<th>Id</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<!--Repeating a array to represent in a table. Use track by $index to add same values multiple times without errors-->
+				<tr data-ng-repeat="person in gc.people | filter:gc.searchTable | orderBy: gc.sorter:gc.reverse">
+					<td>{{person.firstname}}</td>
+					<td>{{person.phone}}</td>
+					<td>{{person.city}}</td>
+					<td>{{person.college}}</td>
+					<td>{{person.id}}</td>
+					<td><button data-ng-click="gc.deleteButton($index)">delete</button></td>
+					<td><i data-ng-click="gc.deleteButton($index)" class="faTrash"></i></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div>
+			<hr>
+			<button data-ng-click=gc.clickButton()>Click Me</button>
+		</div>
+		
+		<!-- Sorting on color. -->
+		<h2>Implementing own Sorting Filter</h2>
+		<p data-ng-repeat="(prop, value) in gc.items | CustomFilter:true">{{value.color}}</p>
+	</div>
+
+	<h2>Implementing own Phone Filter</h2>
+	<p>{{'234567891' | PhoneFilter}}</p>
+	
+	
+</body>

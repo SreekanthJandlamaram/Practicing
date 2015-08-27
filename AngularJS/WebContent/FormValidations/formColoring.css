@@ -1,0 +1,17 @@
+
+label {
+	float : left;
+	width : 150px;
+	display: block;
+}
+
+div {
+	margin-bottom: 20px;
+}
+
+.error{
+	font-size: 0.9;
+	color: red;
+	margin: 0 0 0 150px;
+	padding: 0;
+}

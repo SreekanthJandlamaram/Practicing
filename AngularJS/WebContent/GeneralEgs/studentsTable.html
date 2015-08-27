@@ -1,0 +1,22 @@
+<table id="getTable">
+	<thead>
+		<th>Firstname</th>
+		<th>Phone</th>
+		<th>City</th>
+		<th>College</th>
+		<th>Id</th>
+		<th>Action</th>
+	</thead>
+	
+	<tbody>
+		<!--Repeating a array to represent in a table. Use track by $index to add same values multiple times without errors-->
+		<tr	ng-repeat="person in gc.people | filter:gc.searchTable  track by $index">
+			<td>{{person.firstname}}</td>
+			<td>{{person.phone}}</td>
+			<td>{{person.city}}</td>
+			<td>{{person.college}}</td>
+			<td>{{person.id}}</td>
+			<td><button ng-click="gc.deleteButton($index)">delete</button></td>
+		</tr>
+	</tbody>
+</table>

@@ -1,0 +1,49 @@
+html {
+    height: 100%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* tell the browser to render HTML 5 elements as block */
+article,aside,figure,footer,header,hgroup,nav,section {
+    display: block;
+}
+
+label {
+	width: 150px;
+	float: left;
+	display: block;
+}
+
+div{
+	margin-bottom: 20px;
+}
+
+header {
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    background-color: blue;          
+}
+
+#headPart {
+    background-color: blue;
+    width: 50%;
+}
+
+#headPart h1{
+    color: white;    
+}
+
+.guestOwner {
+    float: left;
+    font-size: 1.2em;
+    padding-right : 10px;
+}
+
+.guestOwner a{
+    text-decoration : none;
+}
