@@ -12,17 +12,6 @@ article,aside,figure,footer,header,hgroup,nav,section {
     display: block;
 }
 
-#GuestOwnerButtonContainer {
-	border : 1px black;
-	width: 50%;
-	margin: 2px auto;
-	padding: 5px;
-}
-
-#guestFormToCenter{
-	margin: 2px auto;
-}
-
 header {
     height: 75px;
     background-color: rgb(44, 160, 241);          
@@ -33,6 +22,17 @@ header {
 	font-size: 35px;
 	color: #353538;
 	margin: 0 80% 0 10%;
+}
+
+#GuestOwnerButtonContainer {
+	border : 1px black;
+	width: 50%;
+	margin: 2px auto;
+}
+
+#guestFormToCenter{
+	margin: 0 25%;
+	padding: 5px 0 0 0;
 }
 
 #headPart h1{
