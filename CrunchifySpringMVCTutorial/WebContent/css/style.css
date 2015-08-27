@@ -12,16 +12,27 @@ article,aside,figure,footer,header,hgroup,nav,section {
     display: block;
 }
 
+#GuestOwnerButtonContainer {
+	border : 1px black;
+	width: 50%;
+	margin: 2px auto;
+	padding: 5px;
+}
+
+#guestFormToCenter{
+	margin: 2px auto;
+}
+
 header {
-    height: 50px;
-    width: 100%;
-    text-align: center;
-    background-color: blue;          
+    height: 75px;
+    background-color: rgb(44, 160, 241);          
 }
 
 #headPart {
-    background-color: blue;
-    width: 50%;
+	padding: 10px 0 5px 0;
+	font-size: 35px;
+	color: #353538;
+	margin: 0 80% 0 10%;
 }
 
 #headPart h1{

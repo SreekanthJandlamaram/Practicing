@@ -2,7 +2,8 @@
 <html data-ng-app='Student'>
 <head>
 <meta charset="utf-8" />
-<title>Student</title>
+<link rel="icon" href="images/glyphicon-cutlery.PNG" type="image/x-icon"/>
+<title>Eatery</title>
 <script>
     document.write('<base href="' + document.location + '" />');
 </script>
@@ -13,39 +14,26 @@
 
 <body>
 
-	<!-- <header>
+	<header>
 		<div id="headPart">
-			<h1>Eatery</h1>
+			<p>Eatery <span class="glyphicon glyphicon-cutlery"></span></p>
 		</div>
 	</header>	
-	<hr> -->
-
-	<ul class="list-inline">
-  		<li>
-			<div class="guestOwner">
-				<a href="#/guest">Guest</a>
-			</div>
-			<div class="guestOwner">
-				<a href="#/owner">Owner</a>
-			</div>
-		</li>
-	</ul>
+	<hr>
 	
-	<!-- <div>
-		<div class="guestOwner">
-			<a href="#/guest">Guest</a>
+	<div id="GuestOwnerButtonContainer">
+		<div class="btn-group btn-group-justified" role="group" aria-label="Guest Owner">
+	 		<a href="#/guest" class="btn btn-default" role="button">Guest</a>
+	 		<a href="#/owner" class="btn btn-default" role="button">Owner</a>
 		</div>
-		<div class="guestOwner">
-			<a href="#/owner">Owner</a>
-		</div>
-	</div> -->
-
+	</div>
+	
 	<section data-ng-view></section>
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script data-require="angular.js@1.4.x" src="https://code.angularjs.org/1.4.3/angular.js" data-semver="1.4.3"></script>
 	<script src="https://code.angularjs.org/1.4.3/angular-route.min.js"></script>
-	<script src="https://code.angularjs.org/1.3.11/angular-messages.min.js"></script>	
-    <script src="studentRouting.js"></script>
-    <script src="studentController.js"></script>    
+	<script src="https://code.angularjs.org/1.3.11/angular-messages.min.js"></script>
+	<script src="js/studentRouting.js"></script>
+    <script src="js/studentController.js"></script>    
 </body>

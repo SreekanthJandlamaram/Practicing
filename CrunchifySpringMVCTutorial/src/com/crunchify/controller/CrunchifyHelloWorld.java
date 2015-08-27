@@ -19,6 +19,7 @@ public class CrunchifyHelloWorld {
     public @ResponseBody
     Student confirmReservation(@RequestBody Reservation user) {
     	
+    	System.out.println("Hi");
     	Student stu = new Student();
     	stu.setStuName(user.getName());
     	return stu;
